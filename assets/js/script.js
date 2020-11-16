@@ -1,15 +1,15 @@
 
 // using moment.js to display current date in a div
 var NowMoment = moment();
-var eDisplayMoment = document.getElementById('currentDay');
-eDisplayMoment.innerHTML = NowMoment.format('[The date is ]dddd, MMMM Do YYYY. [The time is ] h:mm A[.]');
+var current = document.getElementById('currentDay');
+current.innerHTML = NowMoment.format('[The date is ]dddd, MMMM Do YYYY. [The time is ] h:mm A[.]');
 
 //save value (input info in text area) to local storage on click of saveBtn
 $(".saveBtn").on("click", function (event) {
     var saveDescription = $(this).siblings("textarea").val().trim();
  // save id of row w/ text input
-    var saveDescriptionID = $(this).siblings("textarea").attr("id");
-    localStorage.setItem(saveDescription, saveDescritionID);
+    var textId = $(this).siblings("textarea").attr("id");
+    localStorage.setItem(saveDescription, textId);
     console.log(localStorage);
 });
  
@@ -47,9 +47,9 @@ var checkTimes = function() {
         $(descriptionBlockElements[i].id).removeClass(".present .past .future");
 
         // apply new class if task is present/past/future
-        if (descriptionID < now) {
+        if (descriptionID < current) {
             $(manipID).addClass("past");
-        } else if (descriptionID > now) {
+        } else if (descriptionID > current) {
             $(manipID).addClass("future");
         } else {
             $(manipID).addClass("present");
@@ -58,9 +58,11 @@ var checkTimes = function() {
 
 }
 
-// run checkTime every 5 minutes
-setInterval(checkTimes(), (1000 * 60) * 5);
+// run checkTime every 30 minutes
+setInterval(checkTimes, (1000 * 60) * 30);
 
+//call functions
+checkTimes()
 loadEvents()
 
 
