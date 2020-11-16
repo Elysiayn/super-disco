@@ -10,7 +10,7 @@ To utilize this application, the user must first deploy the website.
 2. User will click the corresponding "Save Button" that is indicated by the blue button with a white lock icon at the end of the hour row. (Note: each hour row will have it's own save button).
 3. To clear task, user will need to select and manually delete text desired. User will then need to click on the save button again to store updated changes. 
 
-##Features
+## Features
 * Displays current date and time at the moment of the application deployment. 
 * Tasks are added by clicking on text area next to corresponding hour. 
 * Clicking the save button with store tasks in local storage. 
@@ -21,7 +21,7 @@ To utilize this application, the user must first deploy the website.
 
 [workday-scheduler](https://elysiayn.github.io/workday-scheduler/)
 
-![workday-scheduler](./assets/images/screenshot)
+![workday-scheduler](/assets/images/screenshot.pdf) 
 
 ### Contributions
 * Starter code provided by UCF Coding Boot Camp in inconjunction with Xander Rapstine. 
