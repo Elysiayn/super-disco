@@ -40,7 +40,7 @@ var auditTimes = function() {
     for (var i = 0; i < descriptionBlockElements.length; i++) {
 
         // get description elements by ID
-        var manipID = document.getElementById(descriptionBlockElements[i].id)
+        var getID = document.getElementById(descriptionBlockElements[i].id)
 
         // Get description arrays ID's as a string
         var descriptionID = descriptionBlockElements[i].id;        
@@ -48,15 +48,13 @@ var auditTimes = function() {
         // remove any old classes from the element
         $(descriptionBlockElements[i].id).removeClass(".present .past .future");
        
-        console.log("typeof descriptionID: ", typeof descriptionID);
-        console.log("typeof moment: ", typeof moment().hour());
         // apply new class if task is present/past/future
         if (descriptionID < moment().hour()) {
-            $(manipID).addClass("past");
+            $(getID).addClass("past");
         } else if (descriptionID > moment().hour()) {
-            $(manipID).addClass("future");
+            $(getID).addClass("future");
         } else {
-            $(manipID).addClass("present");
+            $(getID).addClass("present");
         }
     }
 
