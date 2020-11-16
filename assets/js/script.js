@@ -16,21 +16,21 @@ $(".saveBtn").on("click", function (event) {
 
 // function to load events
 var loadEvents = function() {
-    $("#0").val(localStorage.getItem("0"))
-    $("#1").val(localStorage.getItem("1"))
-    $("#2").val(localStorage.getItem("2"))
-    $("#3").val(localStorage.getItem("3"))
-    $("#4").val(localStorage.getItem("4"))
-    $("#5").val(localStorage.getItem("5"))
-    $("#6").val(localStorage.getItem("6"))
-    $("#7").val(localStorage.getItem("7"))
-    $("#8").val(localStorage.getItem("8"))
-    $("#9").val(localStorage.getItem("9"))
+    $("#08").val(localStorage.getItem("08"))
+    $("#09").val(localStorage.getItem("09"))
     $("#10").val(localStorage.getItem("10"))
+    $("#11").val(localStorage.getItem("11"))
+    $("#12").val(localStorage.getItem("12"))
+    $("#13").val(localStorage.getItem("13"))
+    $("#14").val(localStorage.getItem("14"))
+    $("#15").val(localStorage.getItem("15"))
+    $("#16").val(localStorage.getItem("16"))
+    $("#17").val(localStorage.getItem("17"))
+    $("#18").val(localStorage.getItem("18"))
 }
 
 // Check time function and apply corresponding class
-var checkTimes = function() {
+var auditTimes = function() {
     // select all description block elements
     var descriptionBlockElements = $(".description");
 
@@ -47,9 +47,9 @@ var checkTimes = function() {
         $(descriptionBlockElements[i].id).removeClass(".present .past .future");
 
         // apply new class if task is present/past/future
-        if (descriptionID < current) {
+        if (descriptionID < moment().hour()) {
             $(manipID).addClass("past");
-        } else if (descriptionID > current) {
+        } else if (descriptionID > moment().hour()) {
             $(manipID).addClass("future");
         } else {
             $(manipID).addClass("present");
@@ -59,10 +59,10 @@ var checkTimes = function() {
 }
 
 // run checkTime every 30 minutes
-setInterval(checkTimes, (1000 * 60) * 30);
+setInterval(auditTimes, (1000 * 60) * 30);
 
 //call functions
-checkTimes()
+auditTimes()
 loadEvents()
 
 
