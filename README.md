@@ -21,7 +21,7 @@ To utilize this application, the user must first deploy the website.
 
 [workday-scheduler](https://elysiayn.github.io/workday-scheduler/)
 
-![workday-scheduler](/assets/images/screenshot.pdf) 
+![workday-scheduler](assets/images/screenshot.pdf) 
 
 ### Contributions
 * Starter code provided by UCF Coding Boot Camp in inconjunction with Xander Rapstine. 
