@@ -9,7 +9,9 @@ $(".saveBtn").on("click", function (event) {
     var saveDescription = $(this).siblings("textarea").val().trim();
  // save id of row w/ text input
     var textId = $(this).siblings("textarea").attr("id");
-    localStorage.setItem(saveDescription, textId);
+    localStorage.setItem(textId, saveDescription);
+    console.log("saveDescription: ", saveDescription);
+    console.log("textId: ", textId);
     console.log(localStorage);
 });
  
@@ -45,7 +47,9 @@ var auditTimes = function() {
 
         // remove any old classes from the element
         $(descriptionBlockElements[i].id).removeClass(".present .past .future");
-
+       
+        console.log("typeof descriptionID: ", typeof descriptionID);
+        console.log("typeof moment: ", typeof moment().hour());
         // apply new class if task is present/past/future
         if (descriptionID < moment().hour()) {
             $(manipID).addClass("past");
