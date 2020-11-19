@@ -60,7 +60,7 @@ var auditTimes = function() {
 
 }
 
-// run checkTime every 30 minutes
+// run auditTimes every 30 minutes
 setInterval(auditTimes, (1000 * 60) * 30);
 
 //call functions
